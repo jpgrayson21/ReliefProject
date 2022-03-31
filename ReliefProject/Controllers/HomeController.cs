@@ -11,11 +11,13 @@ namespace ReliefProject.Controllers
 {
     public class HomeController : Controller
     {
+        private IReliefRepository repo { get; set; }
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IReliefRepository temp)
         {
             _logger = logger;
+            repo = temp;
         }
 
         public IActionResult Index()
@@ -23,9 +25,30 @@ namespace ReliefProject.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult SupplyRequest()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult SupplyRequest(SupplyRequest sr)
+        {
+            ViewBag.text = "Submitted Request";
+            return View("Confirmation");
+        }
+
+        public IActionResult ViewRequests()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult FullfillRequest()
+        {
+            ViewBag.text = "Initiated Request Fulfillment";
+
+            return View("Confirmation");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

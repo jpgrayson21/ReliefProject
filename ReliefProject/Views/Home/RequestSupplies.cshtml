@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Request Supplies";
+}
+@model SupplyRequest
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" asp-action="RequestSupplies">
+    <div class="form-group my-1">
+        <label asp-for="Product">Required Item:</label>
+        <input asp-for="Product" />
+    </div>
+    <div class="form-group my-1">
+        <label asp-for="Amount">Quantity Required:</label>
+        <input type="number" asp-for="Amount" />
+    </div>
+    <div class="form-group my-1">
+        <label asp-for="Notes">Other notes:</label>
+        <textarea asp-for="Notes"/>
+    </div>
+</form>
