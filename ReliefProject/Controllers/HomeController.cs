@@ -44,7 +44,7 @@ namespace ReliefProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult FullfillRequest()
+        public IActionResult FulfillRequest()
         {
             ViewBag.text = "Initiated Request Fulfillment";
 
