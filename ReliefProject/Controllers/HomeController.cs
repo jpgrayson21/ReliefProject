@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ReliefProject.Models;
 using System;
@@ -28,26 +29,43 @@ namespace ReliefProject.Controllers
         [HttpGet]
         public IActionResult RequestSupplies()
         {
+            ViewBag.hums = repo.Humanitarians.ToList();
+            ViewBag.prod = repo.Products.ToList();
             return View();
         }
 
         [HttpPost]
-        public IActionResult RequestSupplies(Request sr)
+        public IActionResult RequestSupplies(Request request)
         {
+            repo.AddRequest(request);
+
             ViewBag.text = "Submitted Request";
             return View("Confirmation");
         }
 
         public IActionResult ViewRequests()
         {
-            return View();
+            ViewBag.hums = repo.Humanitarians.ToList();
+            ViewBag.prod = repo.Products.ToList();
+            var requests = repo.Requests.ToList();
+
+            return View(requests);
         }
 
         [HttpGet]
+        public IActionResult RequestDetails(int id)
+        {
+            var request = repo.Requests.FirstOrDefault(x => x.RequestId == id);
+            ViewBag.dons = repo.Donations.Where(x => x.HumanitarianId == id);
+            ViewBag.hum = repo.Humanitarians.FirstOrDefault(x => x.OrgId == id);
+            ViewBag.prod = repo.Products.FirstOrDefault(x => x.ProductId == request.ProductId);
+            return View(request);
+        }
+
         public IActionResult FulfillRequest()
         {
-            ViewBag.text = "Initiated Request Fulfillment";
-
+            //Currently not available in Alpha testing
+            ViewBag.text = "Started Request Fulfillment";
             return View("Confirmation");
         }
 

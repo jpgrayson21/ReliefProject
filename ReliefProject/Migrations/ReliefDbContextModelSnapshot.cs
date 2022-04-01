@@ -68,6 +68,9 @@ namespace ReliefProject.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("HumanitarianId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Notes")
                         .HasColumnType("TEXT");
 
@@ -89,46 +92,51 @@ namespace ReliefProject.Migrations
                         {
                             DonationId = 1,
                             Discount = "Free",
+                            HumanitarianId = 1,
                             Notes = "",
                             ProductionId = 1,
                             Quantity = 500,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 496, DateTimeKind.Local).AddTicks(8850)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 259, DateTimeKind.Local).AddTicks(1620)
                         },
                         new
                         {
                             DonationId = 2,
                             Discount = "Free",
+                            HumanitarianId = 3,
                             Notes = "",
                             ProductionId = 2,
                             Quantity = 1000,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 505, DateTimeKind.Local).AddTicks(2880)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 268, DateTimeKind.Local).AddTicks(2420)
                         },
                         new
                         {
                             DonationId = 3,
                             Discount = "50% Off",
+                            HumanitarianId = 2,
                             Notes = "",
                             ProductionId = 3,
                             Quantity = 4500,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 505, DateTimeKind.Local).AddTicks(2940)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 268, DateTimeKind.Local).AddTicks(2480)
                         },
                         new
                         {
                             DonationId = 4,
                             Discount = "Free",
+                            HumanitarianId = 2,
                             Notes = "Manufacturing Issues",
                             ProductionId = 3,
                             Quantity = 500,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 505, DateTimeKind.Local).AddTicks(2940)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 268, DateTimeKind.Local).AddTicks(2490)
                         },
                         new
                         {
                             DonationId = 5,
                             Discount = "Free",
+                            HumanitarianId = 3,
                             Notes = "",
                             ProductionId = 4,
                             Quantity = 1200,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 505, DateTimeKind.Local).AddTicks(2950)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 268, DateTimeKind.Local).AddTicks(2490)
                         });
                 });
 
@@ -406,7 +414,7 @@ namespace ReliefProject.Migrations
                             HumanitarianId = 1,
                             Notes = "",
                             ProductId = 1,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 506, DateTimeKind.Local).AddTicks(7640)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 269, DateTimeKind.Local).AddTicks(7980)
                         },
                         new
                         {
@@ -416,7 +424,7 @@ namespace ReliefProject.Migrations
                             HumanitarianId = 3,
                             Notes = "",
                             ProductId = 4,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 506, DateTimeKind.Local).AddTicks(8130)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 269, DateTimeKind.Local).AddTicks(8460)
                         },
                         new
                         {
@@ -426,7 +434,7 @@ namespace ReliefProject.Migrations
                             HumanitarianId = 2,
                             Notes = "",
                             ProductId = 5,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 506, DateTimeKind.Local).AddTicks(8150)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 269, DateTimeKind.Local).AddTicks(8480)
                         },
                         new
                         {
@@ -436,7 +444,7 @@ namespace ReliefProject.Migrations
                             HumanitarianId = 2,
                             Notes = "",
                             ProductId = 1,
-                            TimeStamp = new DateTime(2022, 4, 1, 11, 39, 8, 506, DateTimeKind.Local).AddTicks(8160)
+                            TimeStamp = new DateTime(2022, 4, 1, 13, 28, 17, 269, DateTimeKind.Local).AddTicks(8480)
                         });
                 });
 

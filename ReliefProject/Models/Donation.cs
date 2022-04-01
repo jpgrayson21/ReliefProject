@@ -22,5 +22,8 @@ namespace ReliefProject.Models
 
         [Required]
         public int ProductionId { get; set; }
+
+        [Required]
+        public int HumanitarianId { get; set; }
     }
 }

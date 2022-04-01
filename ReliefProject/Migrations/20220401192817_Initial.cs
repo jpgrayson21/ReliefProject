@@ -30,7 +30,8 @@ namespace ReliefProject.Migrations
                     Quantity = table.Column<int>(nullable: false),
                     Discount = table.Column<string>(nullable: false),
                     Notes = table.Column<string>(nullable: true),
-                    ProductionId = table.Column<int>(nullable: false)
+                    ProductionId = table.Column<int>(nullable: false),
+                    HumanitarianId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -159,28 +160,28 @@ namespace ReliefProject.Migrations
 
             migrationBuilder.InsertData(
                 table: "Donations",
-                columns: new[] { "DonationId", "Discount", "Notes", "ProductionId", "Quantity", "TimeStamp" },
-                values: new object[] { 4, "Free", "Manufacturing Issues", 3, 500, new DateTime(2022, 4, 1, 11, 39, 8, 505, DateTimeKind.Local).AddTicks(2940) });
+                columns: new[] { "DonationId", "Discount", "HumanitarianId", "Notes", "ProductionId", "Quantity", "TimeStamp" },
+                values: new object[] { 4, "Free", 2, "Manufacturing Issues", 3, 500, new DateTime(2022, 4, 1, 13, 28, 17, 268, DateTimeKind.Local).AddTicks(2490) });
 
             migrationBuilder.InsertData(
                 table: "Donations",
-                columns: new[] { "DonationId", "Discount", "Notes", "ProductionId", "Quantity", "TimeStamp" },
-                values: new object[] { 3, "50% Off", "", 3, 4500, new DateTime(2022, 4, 1, 11, 39, 8, 505, DateTimeKind.Local).AddTicks(2940) });
+                columns: new[] { "DonationId", "Discount", "HumanitarianId", "Notes", "ProductionId", "Quantity", "TimeStamp" },
+                values: new object[] { 3, "50% Off", 2, "", 3, 4500, new DateTime(2022, 4, 1, 13, 28, 17, 268, DateTimeKind.Local).AddTicks(2480) });
 
             migrationBuilder.InsertData(
                 table: "Donations",
-                columns: new[] { "DonationId", "Discount", "Notes", "ProductionId", "Quantity", "TimeStamp" },
-                values: new object[] { 5, "Free", "", 4, 1200, new DateTime(2022, 4, 1, 11, 39, 8, 505, DateTimeKind.Local).AddTicks(2950) });
+                columns: new[] { "DonationId", "Discount", "HumanitarianId", "Notes", "ProductionId", "Quantity", "TimeStamp" },
+                values: new object[] { 5, "Free", 3, "", 4, 1200, new DateTime(2022, 4, 1, 13, 28, 17, 268, DateTimeKind.Local).AddTicks(2490) });
 
             migrationBuilder.InsertData(
                 table: "Donations",
-                columns: new[] { "DonationId", "Discount", "Notes", "ProductionId", "Quantity", "TimeStamp" },
-                values: new object[] { 1, "Free", "", 1, 500, new DateTime(2022, 4, 1, 11, 39, 8, 496, DateTimeKind.Local).AddTicks(8850) });
+                columns: new[] { "DonationId", "Discount", "HumanitarianId", "Notes", "ProductionId", "Quantity", "TimeStamp" },
+                values: new object[] { 1, "Free", 1, "", 1, 500, new DateTime(2022, 4, 1, 13, 28, 17, 259, DateTimeKind.Local).AddTicks(1620) });
 
             migrationBuilder.InsertData(
                 table: "Donations",
-                columns: new[] { "DonationId", "Discount", "Notes", "ProductionId", "Quantity", "TimeStamp" },
-                values: new object[] { 2, "Free", "", 2, 1000, new DateTime(2022, 4, 1, 11, 39, 8, 505, DateTimeKind.Local).AddTicks(2880) });
+                columns: new[] { "DonationId", "Discount", "HumanitarianId", "Notes", "ProductionId", "Quantity", "TimeStamp" },
+                values: new object[] { 2, "Free", 3, "", 2, 1000, new DateTime(2022, 4, 1, 13, 28, 17, 268, DateTimeKind.Local).AddTicks(2420) });
 
             migrationBuilder.InsertData(
                 table: "Humanitarians",
@@ -260,22 +261,22 @@ namespace ReliefProject.Migrations
             migrationBuilder.InsertData(
                 table: "Requests",
                 columns: new[] { "RequestId", "AidType", "Amount", "HumanitarianId", "Notes", "ProductId", "TimeStamp" },
-                values: new object[] { 1, "Natural Disaster Recovery", 1500, 1, "", 1, new DateTime(2022, 4, 1, 11, 39, 8, 506, DateTimeKind.Local).AddTicks(7640) });
+                values: new object[] { 1, "Natural Disaster Recovery", 1500, 1, "", 1, new DateTime(2022, 4, 1, 13, 28, 17, 269, DateTimeKind.Local).AddTicks(7980) });
 
             migrationBuilder.InsertData(
                 table: "Requests",
                 columns: new[] { "RequestId", "AidType", "Amount", "HumanitarianId", "Notes", "ProductId", "TimeStamp" },
-                values: new object[] { 2, "Third World Production", 6000, 3, "", 4, new DateTime(2022, 4, 1, 11, 39, 8, 506, DateTimeKind.Local).AddTicks(8130) });
+                values: new object[] { 2, "Third World Production", 6000, 3, "", 4, new DateTime(2022, 4, 1, 13, 28, 17, 269, DateTimeKind.Local).AddTicks(8460) });
 
             migrationBuilder.InsertData(
                 table: "Requests",
                 columns: new[] { "RequestId", "AidType", "Amount", "HumanitarianId", "Notes", "ProductId", "TimeStamp" },
-                values: new object[] { 3, "Refugee Assistance", 200, 2, "", 5, new DateTime(2022, 4, 1, 11, 39, 8, 506, DateTimeKind.Local).AddTicks(8150) });
+                values: new object[] { 3, "Refugee Assistance", 200, 2, "", 5, new DateTime(2022, 4, 1, 13, 28, 17, 269, DateTimeKind.Local).AddTicks(8480) });
 
             migrationBuilder.InsertData(
                 table: "Requests",
                 columns: new[] { "RequestId", "AidType", "Amount", "HumanitarianId", "Notes", "ProductId", "TimeStamp" },
-                values: new object[] { 4, "Refugee Assistance", 2000, 2, "", 1, new DateTime(2022, 4, 1, 11, 39, 8, 506, DateTimeKind.Local).AddTicks(8160) });
+                values: new object[] { 4, "Refugee Assistance", 2000, 2, "", 1, new DateTime(2022, 4, 1, 13, 28, 17, 269, DateTimeKind.Local).AddTicks(8480) });
 
             migrationBuilder.InsertData(
                 table: "Suppliers",

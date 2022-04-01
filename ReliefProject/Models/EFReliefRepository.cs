@@ -24,7 +24,7 @@ namespace ReliefProject.Models
         // Allow for Interface methods
         public void AddRequest(Request request)
         {
-            _context.Add(request);
+            _context.Requests.Add(request);
             _context.SaveChanges();
         }
 

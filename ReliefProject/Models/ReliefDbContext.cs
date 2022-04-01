@@ -34,11 +34,11 @@ namespace ReliefProject.Models
 
             // Seed Donations Table
             mb.Entity<Donation>().HasData(
-                new Donation { DonationId = 1, Discount = "Free", Quantity = 500, ProductionId = 1, Notes = "", TimeStamp = DateTime.Now },
-                new Donation { DonationId = 2, Discount = "Free", Quantity = 1000, ProductionId = 2, Notes = "", TimeStamp = DateTime.Now },
-                new Donation { DonationId = 3, Discount = "50% Off", Quantity = 4500, ProductionId = 3, Notes = "", TimeStamp = DateTime.Now },
-                new Donation { DonationId = 4, Discount = "Free", Quantity = 500, ProductionId = 3, Notes = "Manufacturing Issues", TimeStamp = DateTime.Now },
-                new Donation { DonationId = 5, Discount = "Free", Quantity = 1200, ProductionId = 4, Notes = "", TimeStamp = DateTime.Now, }
+                new Donation { DonationId = 1, Discount = "Free", Quantity = 500, ProductionId = 1, Notes = "", TimeStamp = DateTime.Now, HumanitarianId = 1 },
+                new Donation { DonationId = 2, Discount = "Free", Quantity = 1000, ProductionId = 2, Notes = "", TimeStamp = DateTime.Now, HumanitarianId = 3 },
+                new Donation { DonationId = 3, Discount = "50% Off", Quantity = 4500, ProductionId = 3, Notes = "", TimeStamp = DateTime.Now, HumanitarianId = 2 },
+                new Donation { DonationId = 4, Discount = "Free", Quantity = 500, ProductionId = 3, Notes = "Manufacturing Issues", TimeStamp = DateTime.Now, HumanitarianId = 2 },
+                new Donation { DonationId = 5, Discount = "Free", Quantity = 1200, ProductionId = 4, Notes = "", TimeStamp = DateTime.Now, HumanitarianId = 3 }
             );
 
             // Seed Humanitarians Table
