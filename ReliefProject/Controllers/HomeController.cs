@@ -32,7 +32,7 @@ namespace ReliefProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult RequestSupplies(SupplyRequest sr)
+        public IActionResult RequestSupplies(Request sr)
         {
             ViewBag.text = "Submitted Request";
             return View("Confirmation");

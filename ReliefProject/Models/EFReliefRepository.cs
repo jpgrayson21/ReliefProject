@@ -12,24 +12,49 @@ namespace ReliefProject.Models
             _context = temp;
         }
 
-        public IQueryable<SupplyRequest> Requests => _context.Requests;
-        public IQueryable<Organization> Organizations => _context.Organizations;
+        // Read in IQueryables
+        public IQueryable<Category> Categories => _context.Categories;
+        public IQueryable<Donation> Donations => _context.Donations;
+        public IQueryable<Humanitarian> Humanitarians => _context.Humanitarians;
+        public IQueryable<Product> Products => _context.Products;
+        public IQueryable<Production> Productions => _context.Productions;
+        public IQueryable<Request> Requests => _context.Requests;
+        public IQueryable<Supplier> Suppliers => _context.Suppliers;
 
-        public void AddRequest(SupplyRequest sr)
+        // Allow for Interface methods
+        public void AddRequest(Request request)
         {
-            _context.Add(sr);
+            _context.Add(request);
             _context.SaveChanges();
         }
 
-        public void EditRequest(SupplyRequest sr)
+        public void EditRequest(Request request)
         {
-            _context.Update(sr);
+            _context.Update(request);
             _context.SaveChanges();
         }
 
-        public void DeleteRequest(SupplyRequest sr)
+        public void DeleteRequest(Request request)
         {
-            _context.Remove(sr);
+            _context.Remove(request);
+            _context.SaveChanges();
+        }
+
+        public void AddDonation(Donation donation)
+        {
+            _context.Add(donation);
+            _context.SaveChanges();
+        }
+
+        public void EditDonation(Donation donation)
+        {
+            _context.Update(donation);
+            _context.SaveChanges();
+        }
+
+        public void DeleteDonation(Donation donation)
+        {
+            _context.Remove(donation);
             _context.SaveChanges();
         }
     }

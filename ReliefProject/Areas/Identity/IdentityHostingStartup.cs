@@ -15,9 +15,12 @@ namespace ReliefProject.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
+            //Will use when users are implemented. Not needed for Alpha/Beta testing
+
+            builder.ConfigureServices((context, services) =>
+            {
                 services.AddDbContext<ReliefDbContext>(options =>
-                    options.UseSqlServer(
+                    options.UseSqlite(
                         context.Configuration.GetConnectionString("ReliefDbContextConnection")));
 
                 services.AddDefaultIdentity<ReliefProjectUser>(options => options.SignIn.RequireConfirmedAccount = true)

@@ -1,3 +1,6 @@
+// Authors: Nate Baker, Josh Brown, James Grayson, Brandon Hunt
+// Description: This web app is to connect humanitarian agencies with potential suppliers for products that many need.
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
