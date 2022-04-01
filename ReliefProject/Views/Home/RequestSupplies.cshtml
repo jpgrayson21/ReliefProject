@@ -5,17 +5,26 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<form method="post" asp-action="RequestSupplies">
-    <div class="form-group my-1">
-        <label asp-for="Product">Required Item:</label>
-        <input asp-for="Product" />
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Product">Requested Item:</label>
+        <input asp-for="Product" class="form-control"/>
     </div>
-    <div class="form-group my-1">
+    <div class="form-group">
         <label asp-for="Amount">Quantity Required:</label>
-        <input type="number" asp-for="Amount" />
+        <input type="number" asp-for="Amount" class="form-control"/>
     </div>
-    <div class="form-group my-1">
+    <div class="form-group">
+        <label asp-for="AidType">Aid Type:</label>
+        <select asp-for="Amount" class="form-control">
+            <option>Natural Disaster Recovery</option>
+            <option>Refugee Assistance</option>
+            <option>Third-World Improvements</option>
+        </select>
+    </div>
+    <div class="form-group">
         <label asp-for="Notes">Other notes:</label>
-        <textarea asp-for="Notes"/>
+        <textarea asp-for="Notes" class="form-control"></textarea>
     </div>
+    <button class="btn btn-primary float-right" type="submit">Submit Request</button>
 </form>

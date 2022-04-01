@@ -26,13 +26,13 @@ namespace ReliefProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult SupplyRequest()
+        public IActionResult RequestSupplies()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult SupplyRequest(SupplyRequest sr)
+        public IActionResult RequestSupplies(SupplyRequest sr)
         {
             ViewBag.text = "Submitted Request";
             return View("Confirmation");
