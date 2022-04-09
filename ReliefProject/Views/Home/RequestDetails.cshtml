@@ -4,44 +4,57 @@
 
 @model Request
 
-<h2>Request by @ViewBag.hum.OrgName</h2>
-<br />
-<div class="row">
-    <div class="col-3">
-        <h4>Requested Product:</h4>
-        <h4>Requested Quantity:</h4>
-        <h4>Type of Aid:</h4>
-    </div>
-    <div class="col-6">
-        <h4>@ViewBag.prod.ProductName</h4>
-        <h4>@Model.Amount</h4>
-        <h4>@Model.AidType</h4>
-    </div>
-    <div class="col-3">
-        <a class="btn btn-primary text-white" asp-action="FulfillRequest">Fulfill Request</a>
-    </div>
-</div>
- 
-<br />
-<p><b>Notes:</b> @Model.Notes</p>
-<br /><br />
+    <div class="container">
+        <div class="container shadow p-5 rounded">
+            <h2>Request by @ViewBag.hum.OrgName</h2>
+            <br />
+            <div class="row">
+                <div class="col-3">
+                    <h4>Requested Product:</h4>
+                    <h4>Requested Quantity:</h4>
+                    <h4>Type of Aid:</h4>
+                </div>
+                <div class="col-6">
+                    <h4>@ViewBag.prod.ProductName</h4>
+                    <h4>@Model.Amount</h4>
+                    <h4>@Model.AidType</h4>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-primary btn-lg text-white" asp-action="FulfillRequest">Fulfill Request</a>
+                </div>
+            </div>
+            <br />
+            <p><b>Notes:</b> @Model.Notes</p>
+            <br /><br />
+        </div>
 
-<div class="row">
-    <div class="col-3">
-        <h4>Previous Interactions:</h4>
-    </div>
-    <div class="col">
-        @foreach (var don in ViewBag.dons)
-            {
-                <div class="card col-4">
-                    <div class="card-header">
-                        @don.TimeStamp
-                    </div>
-                    <div class="card-body">
-                        @*Currently not available in Alpha testing*@
-                        <a class="btn btn-sm btn-secondary" asp-action="ViewRequests">Donation Details</a>
+
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-3">
+                    <h4>Previous Interactions:</h4>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        @for (int i = 0; i < ViewBag.dons.Count; i++)
+                        {
+                            <div class="card shadow-sm col-5 mx-2">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="card-title"><h5>@ViewBag.prodList[i].ProductName</h5></div>
+                                            <h6>@ViewBag.dons[i].TimeStamp</h6>
+                                        </div>
+                                        <div class="col">
+                                            @* Not applicable for prototype. No donation history *@
+                                            <a class="btn btn-sm btn-secondary" asp-action="ViewRequests">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
-            }
+            </div>
+        </div>
     </div>
-</div>
