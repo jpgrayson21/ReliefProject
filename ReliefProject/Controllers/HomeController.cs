@@ -55,9 +55,17 @@ namespace ReliefProject.Controllers
         [HttpGet]
         public IActionResult RequestDetails(int id)
         {
+            ViewBag.prodList = new List<Product>();
             var request = repo.Requests.FirstOrDefault(x => x.RequestId == id);
-            ViewBag.dons = repo.Donations.Where(x => x.HumanitarianId == id);
-            ViewBag.hum = repo.Humanitarians.FirstOrDefault(x => x.OrgId == id);
+            ViewBag.dons = repo.Donations.Where(x => x.HumanitarianId == id).ToList();
+            foreach (Donation donation in ViewBag.dons)
+            {
+                var production = repo.Productions.FirstOrDefault(x => x.ProductionId == donation.ProductionId);
+                var product = repo.Products.FirstOrDefault(x => x.ProductId == production.ProductId);
+                ViewBag.prodList.Add(product);
+            }
+
+            ViewBag.hum = repo.Humanitarians.FirstOrDefault(x => x.OrgId == request.HumanitarianId);
             ViewBag.prod = repo.Products.FirstOrDefault(x => x.ProductId == request.ProductId);
             return View(request);
         }
